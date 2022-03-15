@@ -5,12 +5,14 @@ import Header from './header';
 
 // Code-splitting is automated for `routes` directory
 import Home from '../routes/home';
+import Contact from '../routes/contact';
 
 const App = () => (
 	<div id="app">
 		<Header />
 		<Router>
 			<Home path="/" />
+			<Contact path="/contact"/>
 		</Router>
 	</div>
 )
