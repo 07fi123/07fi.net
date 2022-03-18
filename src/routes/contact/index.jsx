@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
 
-import style from './style.scss';
+import style from './style.module.scss';
 //import Morgen from '../../components/widgets/morgen'
 const Contact = () => {
 	const [email,showEmail] = useState(false);
