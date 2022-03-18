@@ -13,7 +13,7 @@ const Home = () => (
     		<img src={mugwJPG} alt="profile-image"/>
 		</picture>
 		<p>I build excellent software for organizations and individuals.<br/> What could I build <span class={style.forYou}>for you?</span></p>
-		<p><a class={style.book} href="https://book.morgen.so/07fi12392/open-hours">Book a Consultation</a></p>
+		<p><a class={style.book} href="/contact">Get in touch</a></p>
 	</div>
 );
 

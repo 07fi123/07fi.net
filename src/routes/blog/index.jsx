@@ -15,8 +15,7 @@ export const Blog = () => {
     <>
     <MDXProvider components={components}>
       <div>Blog</div>
-        <Post class=
-        {style.post}/>
+        <Post class={style.post}/>
     </MDXProvider>
     </>
     )

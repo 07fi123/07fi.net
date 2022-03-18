@@ -10,6 +10,8 @@
   "dependencies": {
     "@mdx-js/preact": "^2.1.0",
     "preact": "^10.5.15",
+    "preact-async-route": "^2.2.1",
+    "preact-helmet": "^4.0.0-alpha-3",
     "preact-router": "^4.0.1"
   },
   "devDependencies": {
@@ -18,7 +20,7 @@
     "@vitejs/plugin-legacy": "^1.7.1",
     "bulma": "^0.9.3",
     "remark-gfm": "^3.0.1",
-    "vite": "^2.8.0",
-    "sass": "^1.49.9"
+    "sass": "^1.49.9",
+    "vite": "^2.8.0"
   }
 }
