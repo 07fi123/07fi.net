@@ -1,65 +1,64 @@
 .home {
-	padding: 56px 20px;
-	min-height: 100%;
-	width: 100%;
-	text-align: center;
+  padding: 25px 20px;
+  min-height: 80%;
+  width: 100%;
+  text-align: center;
 }
-img{
-	border-radius: 50%;
-	max-height: 300px;
-	box-shadow: 0px 0px 6px 4px rgb(199, 199, 199);
-	height: 300px;
-	@media(max-width: 756px) {
-		height: 225px;
-	}
-	@media(max-width: 298px) {
-		height: 200px;
-	}
-	margin: 2vw;
-}
-p {
-	line-height: 1.5em;
-	font-weight: bold;
+.me {
+  img {
+    border-radius: 50%;
+    max-height: 300px;
+    box-shadow: 0px 0px 6px 4px rgb(199, 199, 199);
+    height: 300px;
+    @media (max-width: 756px) {
+      height: 225px;
+    }
+    @media (max-width: 298px) {
+      height: 200px;
+    }
+    margin: 2vw;
+  }
+  p {
+    line-height: 1.5em;
+    font-weight: bold;
+  }
 }
 
 input {
-	color: #222;
-	text-align: center;
-	padding: .1rem  1rem;
-	border: none;
-	border-bottom: 1px solid #222;
-	caret-color: #222;
-	&:focus-visible{
-		border: 0px solid white;
-		outline-color: transparent;
-		border-bottom: 2px solid #222;
-
-	}
+  color: #444;
+  text-align: center;
+  padding: 0.1rem 1rem;
+  border: none;
+  border-bottom: 1px solid #444;
+  caret-color: #444;
+  &:focus-visible {
+    border: 0px solid white;
+    outline-color: transparent;
+    border-bottom: 2px solid #444;
+  }
 }
 
-.forYou{
-	color: #204999;
+.forYou {
+  color: #204999;
 }
 @keyframes bookChange {
-	from {
-		background-color: white;
-		color: #204999;
-	}
-	to {
-		background-color: #204999;
-		color:white
-	}
-	
+  from {
+    background-color: white;
+    color: #204999;
+  }
+  to {
+    background-color: #204999;
+    color: white;
+  }
 }
-.book{
-	padding:.75em 1.5em;
-	color: #204999;
-	background-color: white;
-	border: 1px solid #204999;
-	border-radius: 5px;
-	text-decoration: none;
-	&:hover{
-		animation: bookChange 1s ease-in-out 250ms infinite alternate;
-	}
-
+.book {
+  padding: 0.75em 1.5em;
+  color: #204999;
+  background-color: white;
+  border: 1px solid #204999;
+  border-radius: 5px;
+  text-decoration: none;
+  &:hover {
+    animation: bookChange 1s ease-in-out 250ms infinite alternate;
+  }
 }

@@ -8,6 +8,13 @@ import Home from './routes/home';
 //import Contact from './routes/contact';
 //import Blog from './routes/blog';
 
+
+
+function getBlogPost(url, cb, props){
+	return import('./routes/blog').then(module => module.BlogPost)
+}
+
+
 const App = () => (
 	<>
 		<Header />
@@ -19,8 +26,13 @@ const App = () => (
 			/>
 			<AsyncRoute 
 				path="/blog"
-			    getComponent={() => import('./routes/blog').then(module => module.default)}
+			    getComponent={() => import('./routes/blog').then(module => module.Blog)}
 			/>
+			<AsyncRoute 
+				path="/blog/:slug"
+			    getComponent={() => import('./routes/blog').then(module => module.BlogPost)}
+			/>				
+
 		</Router>
 	</>
 )

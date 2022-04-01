@@ -1,0 +1,38 @@
+Hello All,
+
+Just to follow up from Tuesday's meeting I've made some adjustments to the lunarly site to hopefully give everyone the data required to solve this issue. I've also written way to long retrospective about how and why this issue happened. I figured an issue that's been floating in the aether for months deserves to be fully put to rest. 
+
+Here's the summary of what has changed. I've added a few new objects to the meta "data-layer" they are as follows:
+
+1. `meta.availableSubscriptions` : Contains the current subscriptions available to buy. This object is encoded on render from liquid to json when the site is delivered to the user. Should be available on page load. 
+2. `meta.subscriptionAddedToCart`: Added to `meta` object when a subscription is added to cart along with the relevant subscription object. This is generated when the user clicks to add a subscription. 
+3. `meta.cart` : Contains the cart object generated from the shopify liquid object ```{{cart}}``` only available on the `/cart` page for now, but could be adjusted.  This object is encoded on render from liquid to json when the site is delivered to the user. Should be available on page load. 
+4. `meta.purchase`: is added to the cart when the user checks out, contains 2 sub-objects:
+   1. `meta.purchase.cart`: contains the state of the cart object at the time of purchase
+   2. `meta.purchase.rechargeData`: contains the data object passed to recharge. 
+
+These changes are live on https://lunarly-development.myshopify.com/ and will be available on lunarly.com **Tonight (3/10) 11:30 CST.** 
+
+Please let me know if anyone has any questions or suggestions,
+
+Austin Geisert,
+
+Software Engineering Contractor @ BuluGroup 
+
+
+
+P.S. I also discovered why the product field in the "meta" data-layer was not correct. Read on if you would like to know more! Don't read if [Lumbergh](https://www.youtube.com/watch?v=jsLUidiYm0w)has you doing TPS reports!
+
+ The crux of the issue seems to be because this "meta" object is injected by shopify on render. It's part of a little documented portion of shopify's in-built analytics. In a perfect world it should describe the current state of products and state of each page. The problem is that the way we do subscriptions is not by using a collection of products, like on marketplace, but by loading these products by "variant id" from liquid theme code into a javascript object to then add them to a cart. 
+
+One would think that because it's loaded by shopify it would be available in their own analytics tools. Unfortunately because we use the liquid code to do naughty naughty things that are not expected (Like pass a variant id to our javascript (scripts.js) custom code via a custom `data-vairant` html prop ). So shopify sees only one variant loaded on the page rather than all 3! We know this to be true if we read the ```{{product}}``` liquid object from the page. We only get the One Month box, that's not right! Funny enough, the liquid ```{{product}}``` object matches exactly the `meta.product` structure and data. 
+
+This may be because the cart was actually an afterthought. Originally lunarly didn't have a cart and users were redirected to recharge directly. This function was added late summer of 2019 but I would imagine that the "meta" data-layer has never been correct, at least on the subscription page, since the site's inception.  
+
+So what's this mean exactly? It means that the software design of the lunarly.com site makes assumptions that are not aligned with the shopify platform today. Lunarly.com's code is a mixture between the narrow scope of only selling subscriptions (with no cart!) and our current goal of a full featured shopify site. Where we are now is not something the original designers anticipated.  For some perspective we are in 2022 and a far cry from 2019. That's Almost 3 years after I first examined the code after it was transferred from Buzzfeed to Bulu's care. Now lunarly has more javascript, tracking, and pages than it shipped with by a good margin. Github asserts that over these 3 years about 130 code commits and over 10 thousand additions have been submitted by myself alone.  
+
+So where do we go from here? The good news is we continually learn from these explorations at the edges of known and unknown, hopefully filling in unknown parts. The even better news is that even if the site is old there are still things we can do! The question is what to do and what order. How do we not just move on, but grow? I might have some ideas, but hey that's probably another meeting. 
+
+(Wow I'm out of breath! I think this was mostly for myself, but hopefully it cleared some things up as I know writing it down did for me. Thanks for reading!) 
+
+It's really really hard sometimes to solve this stuff. The Original task was created October 2021. It's been 5 months. Granted a lot of that time was trying to find the right person to get the right information so I could have enough good information on what the problem actually was. Lots of the time you have to find the "guy" who knows. Sometimes I have to remember I've been in this codebase for 3 years now and by definition I have the most expertise on how it works, but we always learn new things. For better or worse I'm "the guy" when it comes to lunarly theme code. That is a wonderful and dangerous position to be in. I should know how it works but in reality I just know more than someone else, I'm not God or the Devil of lunarly.com although I could become both. I could be right and solve a problem or be wrong and lead to more pain. it's a sobering but good realization to keep my head about me. 

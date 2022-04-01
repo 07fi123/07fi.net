@@ -9,17 +9,22 @@
   },
   "dependencies": {
     "@mdx-js/preact": "^2.1.0",
+    "@react-spring/web": "^9.4.4",
     "preact": "^10.5.15",
     "preact-async-route": "^2.2.1",
     "preact-helmet": "^4.0.0-alpha-3",
-    "preact-router": "^4.0.1"
+    "preact-router": "^4.0.1",
+    "rehype-highlight": "^5.0.2"
   },
   "devDependencies": {
     "@mdx-js/rollup": "^2.1.0",
     "@preact/preset-vite": "^2.1.5",
     "@vitejs/plugin-legacy": "^1.7.1",
     "bulma": "^0.9.3",
+    "katex": "^0.15.3",
+    "rehype-katex": "^6.0.2",
     "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1",
     "sass": "^1.49.9",
     "vite": "^2.8.0"
   }

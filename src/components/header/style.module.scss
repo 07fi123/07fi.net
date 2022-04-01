@@ -1,11 +1,11 @@
 .header {
-	position: fixed;
+	position: block;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 56px;
 	padding: 0;
-	background: transparent;
+	background: white;
 	z-index: 50;
 }
 
@@ -16,7 +16,7 @@
 	font-size: 24px;
 	line-height: 56px;
 	font-weight: 400;
-	color: #222;
+	color: #444;
 }
 
 .header nav {
@@ -33,7 +33,7 @@
 	text-align: center;
 	background: rgba(255,255,255,0);
 	text-decoration: none;
-	color: #222;
+	color: #444;
 	will-change: background-color;
 }
 
