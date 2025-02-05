@@ -20,7 +20,7 @@ const MapPosts = () => {
       <Link class={style.cardLink} id={post.slug} href={"/blog/"+post.slug}>
         <div class={style.card} style={{backgroundImage:'url('+post.image+')'}}>
           <div class={style.whiteGradent}>
-            <h2 class={style.cardTitles}>{post.title}</h2>
+            <h1 class={style.cardTitles}>{post.title}</h1>
           </div>
         </div>
       </Link> 
@@ -34,6 +34,10 @@ const Blog = (props)=> {
   return (
     <>
     <div class={style.blog}>
+       <div class={style.blogTitle}>
+         <h1>Austin's Blog</h1>
+         <h3><i>Adventures.</i></h3>
+        </div>
       <div class={style.grid}>
         <MapPosts/>
       </div>

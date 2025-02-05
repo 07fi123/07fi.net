@@ -18,12 +18,12 @@ const Header = ({title,image}) => {
         </picture>
         <h2 class={style.author}>Austin Geisert</h2>
         </div>
-        <div class={style.column}>
-          <a class={style.socials} href="/blog">← Back to Blog</a>
-          <Share class={style.socials} link={window.location.href}/>
-        </div>
         </div>
     </div>
+    {/* <div class={style.column}>
+          <a class={style.socials} href="/blog">← Back to Blog</a>
+          <Share class={style.socials} link={window.location.href}/>
+    </div> */}
     </>
     )
 }

@@ -1,11 +1,12 @@
 @use "../../style/github-markdown.css";
 
 .post {
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 11vw;
+  padding-right: 11vw;
   font-size: 1.25em;
   color: #444;
   text-align: left;
+
   @media screen and (max-width: 768px) {
     padding-left: 5%;
     padding-right: 5%;
@@ -16,23 +17,35 @@
   min-height: 80%;
   width: 100%;
 }
+
+.blogTitle {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 .grid{
+  margin: 1% 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 3vw;
   row-gap: 3vw;
+  
   @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+
+  grid1poverride{
+    margin-top: 1%;
+  }
 }
+
 .card{
   padding-top: 12em;
   background-color: #ffffff;
   border-radius: 0.5em;
-  box-shadow: 0px 1px 16px 1px #a1a1a1;
+  box-shadow: 0px 1px 16px 1px #cccccc;
 
   background-image: url(https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
   background-size: cover;
@@ -52,14 +65,12 @@
 }
 .cardTitles {
   color: #424242;
-  font-size: 1.35em;
+  font-size: 1.1em;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
   //animation: bookChange 1s ease-in-out 250ms infinite alternate;
-  h1{
-    font-size: 1em;
-  }
+  margin:0px
 }
 
 .header {
@@ -69,7 +80,7 @@
   margin-bottom: 2em;
   background-color: #ffffff;
   border-radius: 0.5em;
-  box-shadow: 0px 1px 16px 1px #a1a1a1;
+  box-shadow: 0px 1px 16px 1px #cccccc;
 
   background-image: url(https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
   background-size: cover;
@@ -87,8 +98,8 @@
   .title {
     font-size: 3em;
     font-weight: bold;
-    margin-bottom: 0.25rem;
-    margin-top: 1rem;
+    margin-bottom: 0rem;
+    margin-top: 0rem;
 
   }
   .column {
