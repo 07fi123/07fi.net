@@ -1,3 +1,6 @@
+@use "../../node_modules/katex/dist/katex.css";
+@use 'highlight.js/styles/github.css';
+
 html, body {
 	height: 100%;
 	width: 100%;
@@ -9,6 +12,8 @@ html, body {
 	color: #444;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
+	font-size: min(max(1rem, 2vw), 17px);
 }
 
 * {

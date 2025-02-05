@@ -1,0 +1,57 @@
+.shareDrawer {
+  left: 25vw;
+  right: 25vw;
+  position: fixed;
+  z-index: 1000;
+  bottom: 10px;
+
+  padding: 0.4em 2em 2em 2em;
+  background-color: #ffffff;
+  border-radius: 5px 5px 5px 5px;
+  //border: solid 1px #000;
+  box-shadow: 0px 0px 4px 4px rgb(235, 235, 235);
+  
+  h2 {
+    margin-bottom: 0.1rem;
+    margin-top: 0.1rem;
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    left: 5vw;
+    right: 5vw;
+    bottom: 10px;
+    top: unset;
+  }
+}
+
+.blueLink {
+  margin-top: 0px;
+  color: #204999;
+  background-color: white;
+  border: 0px solid #204999;
+  border-radius: 5px;
+  font-size: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  //animation: bookChange 1s ease-in-out 250ms infinite alternate;
+}
+
+.alignContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0.5em;
+}
+.exit {
+  background-color: white;
+  border: none;
+  position: relative;
+  z-index: 100001;
+  top: 0.10em;
+  left: 97.5%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.7em;
+  cursor: pointer;
+}
